@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>TruSeek | তথ্য যাচাই</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🕋 TruSeek</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href='index.html'>হোম</a></li>
+                <li><a class='active' href='factcheck.html'>তথ্য যাচাই</a></li>
+                <li><a href='quran.html'>কুরআন</a></li>
+                <li><a href='dataset.html'>ডাটাসেট</a></li>
+                <li><a href='team.html'>টিম</a></li>
+                <li><a href='evaluation.html'>মূল্যায়ন</a></li>
+            </ul>
+            <div class="mobile-menu-button" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fact-check-section">
+            <h2>🧠 আপনার ইসলামিক দাবিটি যাচাই করুন</h2>
+            <p>আমাদের AI-ভিত্তিক ইঞ্জিন আপনার দেওয়া তথ্যের সত্যতা যাচাই করবে।</p>
+            
+            <form id="factCheckForm">
+                <textarea id="userInput" placeholder="এখানে আপনার দাবিটি লিখুন... যেমন: মায়ের পায়ের নিচে জান্নাত" required></textarea>
+                <button type="submit" id="checkBtn">যাচাই করুন</button>
+            </form>
+
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>অনুসন্ধান চলছে...</p>
+            </div>
+
+            <div id="resultContainer" class="hidden">
+                <h3 id="verdict"></h3>
+                <p id="explanation"></p>
+                <strong id="reference"></strong>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TruSeek Team — সত্যের পথে আলোর খোঁজ</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
