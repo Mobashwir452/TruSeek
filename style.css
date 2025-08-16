@@ -203,23 +203,25 @@ header {
 }
 
 .table-container {
-    overflow-x: auto; /* মোবাইলের জন্য টেবিল স্ক্রল করার সুবিধা */
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    /* overflow-x: auto; - এই লাইনটি এখন আর প্রয়োজন নেই */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     font-size: 15px;
+    table-layout: fixed; /* কলামের প্রস্থ ঠিক রাখে */
 }
 
 th, td {
     border: 1px solid #e0f2f1;
     padding: 12px 15px;
     text-align: left;
-    white-space: nowrap; /* লেখাগুলোকে এক লাইনে রাখে */
+    word-wrap: break-word; /* লম্বা শব্দকে ভেঙে দেয় */
+    white-space: normal; /* এই লাইনটি লেখাগুলোকে একাধিক লাইনে নিয়ে আসবে */
 }
 
 th {
@@ -228,65 +230,19 @@ th {
     font-weight: 600;
 }
 
+/* কলামের প্রস্থ নির্ধারণ */
+table th:nth-child(1) { width: 8%; } /* ID */
+table th:nth-child(2) { width: 20%; } /* Claim */
+table th:nth-child(3) { width: 10%; } /* Verdict */
+table th:nth-child(4) { width: 42%; } /* Explanation */
+table th:nth-child(5) { width: 20%; } /* Reference */
+
 tr:nth-child(even) {
     background-color: #f9fdfc;
 }
 
 tr:hover {
     background-color: #e8f5f3;
-}
-
-/* === ফুটার === */
-footer {
-    background-color: #004d40;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-
-/* === রেসপন্সিভ ডিজাইন (মোবাইল এর জন্য) === */
-@media (max-width: 768px) {
-    /* === মোবাইল নেভিগেশন বার === */
-    .mobile-menu-button {
-        display: block; /* মোবাইলে বাটন দেখা যাবে */
-    }
-
-    .nav-links {
-        display: none; /* ডেস্কটপ মেন্যু হাইড হবে */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px; /* Header এর উচ্চতার পর থেকে শুরু */
-        left: 0;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 20px 0;
-    }
-    
-    .nav-links.active {
-        display: flex; /* JavaScript দিয়ে এই ক্লাস যোগ করা হবে */
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 15px 0;
-    }
-    .nav-links li a:hover,
-    .nav-links li a.active {
-        border-bottom: none;
-        color: #00796b;
-    }
-
-    /* === অন্যান্য সেকশন মোবাইলের জন্য === */
-    .hero h2 { font-size: 28px; }
-    .hero p { font-size: 16px; }
-    
-    .features-grid { grid-template-columns: 1fr; }
-    .how-it-works-container { grid-template-columns: 1fr; }
-
-    .dataset { padding: 10px; }
-    th, td { white-space: normal; } /* মোবাইলে লেখাগুলো প্রয়োজনে একাধিক লাইনে আসবে */
 }
 
 
