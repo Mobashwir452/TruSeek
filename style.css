@@ -574,3 +574,64 @@ tr:hover {
     border-top: 1px dashed #cde2e0;
     padding-top: 20px;
 }
+
+
+
+/* === ফুটার === */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center; /* এই লাইনটি টেক্সটকে মাঝখানে নিয়ে আসবে */
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Padding সহ সম্পূর্ণ প্রস্থ নিশ্চিত করে */
+}
+
+
+
+
+
+/* === রেসপন্সিভ ডিজাইন (মোবাইল এর জন্য) === */
+@media (max-width: 768px) {
+    /* === মোবাইল নেভিগেশন বার === */
+    .mobile-menu-button {
+        display: block; /* মোবাইলে হ্যামবার্গার বাটনটি দেখা যাবে */
+    }
+
+    .nav-links {
+        display: none; /* ডেস্কটপের মেন্যুর লেখাগুলো আড়াল হয়ে যাবে */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Header এর উচ্চতার পর থেকে শুরু হবে */
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+    
+    .nav-links.active {
+        display: flex; /* JavaScript দিয়ে এই ক্লাস যোগ করা হলে মেন্যু দেখা যাবে */
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+        border-bottom: none;
+        color: #00796b;
+    }
+
+    /* === অন্যান্য পেইজের মোবাইল লেআউট ঠিক করা === */
+    .hero h2 { font-size: 28px; }
+    .hero p { font-size: 16px; }
+    
+    .features-grid { grid-template-columns: 1fr; }
+    .how-it-works-container { grid-template-columns: 1fr; }
+
+    .dataset { padding: 10px; }
+    th, td { white-space: normal; } /* টেবিলের লেখা প্রয়োজনে একাধিক লাইনে আসবে */
+}
